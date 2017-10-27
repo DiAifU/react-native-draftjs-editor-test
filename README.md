@@ -10,12 +10,36 @@ This ReadMe will use yarn but npm also works.
 
 ## Installing
 
-First build the editor :
+First setup the editor :
 
 ```
 cd react_editor
+yarn install
+```
+
+Then copy modified files from plugins :
+
+On windows :
+
+```
+robocopy modified_draftjs_mention_files/addMention.js node_modules/draft-js-mention-plugin/lib/modifiers/addMention.js
+robocopy modified_draftjs_mention_files/mentionSuggestionsStrategy.js draft-js-mention-plugin/lib/mentionSuggestionsStrategy.js
+```
+
+On Linux / OS X :
+
+```
+cp modified_draftjs_mention_files/addMention.js node_modules/draft-js-mention-plugin/lib/modifiers/addMention.js
+cp modified_draftjs_mention_files/mentionSuggestionsStrategy.js draft-js-mention-plugin/lib/mentionSuggestionsStrategy.js
+```
+
+Then build the app :
+
+```
 yarn build
 ```
+
+Finally copy the build to the React Native app :
 
 On Windows : 
 
@@ -23,8 +47,11 @@ On Windows :
 yarn copy
 ```
 
-Other platforms : Copy the build folder content to ../react_native_app/editor_build.
+On Linux / OS X :
 
+```
+cp -R build ../react_native_app/editor_build
+```
 
 
 This will build a working Editor which can be tested on desktop by running a server using the command :
@@ -38,6 +65,7 @@ Then build the React Native app :
 
 ```
 cd react_native_app
+yarn install
 react-native run-android # on run-ios (but untested)
 ```
 
@@ -57,5 +85,5 @@ Make sure a simulator is running or a device is connected for this last step.
 
 ## Draft-JS files modified
 
-* `draft-js-mention-plugin/lib/mentionSuggestionsStrategy.js` : Replaced original regex `(s|^)` by `(\\s|^)` to allow spaces to trigger suggestions
 * `draft-js-mention-plugin/lib/modifiers/addMention.js` : Added the possibility to load the property `displayName` instead of `name` (when existing) to show the mention with a different name than the suggestion (ex: suggestion is `Matthew Russell`, text displayed will be `@matthew`)
+* `draft-js-mention-plugin/lib/mentionSuggestionsStrategy.js` : Replaced original regex `(s|^)` by `(\\s|^)` to allow spaces to trigger suggestions
