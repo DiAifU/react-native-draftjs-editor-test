@@ -3,10 +3,10 @@
 
 ## Prerequisites
 
-The app was only tested on Android Nougat 7.1 API 25 in Simulator.
-Some build steps are specific to windows platform. A comment will be added for others.
-
-This ReadMe will use yarn but npm also works.
+* An environment with React Native installed.
+* The app was only tested on Android Nougat 7.1 API 25 in Simulator.
+* This ReadMe will use yarn but npm also works.
+* The Linux / OS X specific commands haven't been tested but should be working.
 
 ## Installing
 
@@ -22,15 +22,15 @@ Then copy modified files from plugins :
 On windows :
 
 ```
-robocopy modified_draftjs_mention_files/addMention.js node_modules/draft-js-mention-plugin/lib/modifiers/addMention.js
-robocopy modified_draftjs_mention_files/mentionSuggestionsStrategy.js draft-js-mention-plugin/lib/mentionSuggestionsStrategy.js
+copy modified_draftjs_mention_files\addMention.js node_modules\draft-js-mention-plugin\lib\modifiers\addMention.js
+copy modified_draftjs_mention_files\mentionSuggestionsStrategy.js node_modules\draft-js-mention-plugin\lib\mentionSuggestionsStrategy.js
 ```
 
 On Linux / OS X :
 
 ```
 cp modified_draftjs_mention_files/addMention.js node_modules/draft-js-mention-plugin/lib/modifiers/addMention.js
-cp modified_draftjs_mention_files/mentionSuggestionsStrategy.js draft-js-mention-plugin/lib/mentionSuggestionsStrategy.js
+cp modified_draftjs_mention_files/mentionSuggestionsStrategy.js node_modules/draft-js-mention-plugin/lib/mentionSuggestionsStrategy.js
 ```
 
 Finally build the app :
@@ -38,7 +38,6 @@ Finally build the app :
 ```
 yarn build
 ```
-
 
 This will build a working Editor which can be tested on desktop by running a server using the command :
 
@@ -58,16 +57,16 @@ yarn copy
 On Linux / OS X :
 
 ```
-cp -R build ../react_native_app/editor_build
+cp -R build ../react_native_app/editor_build/
 ```
 
 
-And build the React Native app :
+Finally build the React Native app :
 
 ```
 cd react_native_app
 yarn install
-react-native run-android # or run-ios (but untested)
+react-native run-android # on run-ios (but untested)
 ```
 
 Make sure a simulator is running or a device is connected for this last step.
