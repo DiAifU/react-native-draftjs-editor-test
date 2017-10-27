@@ -3,10 +3,10 @@
 
 ## Prerequisites
 
-* An environment with React Native installed.
-* The app was only tested on Android Nougat 7.1 API 25 in Simulator.
-* This ReadMe will use yarn but npm also works.
-* The Linux / OS X specific commands haven't been tested but should be working.
+The app was only tested on Android Nougat 7.1 API 25 in Simulator.
+Some build steps are specific to windows platform. A comment will be added for others.
+
+This ReadMe will use yarn but npm also works.
 
 ## Installing
 
@@ -22,15 +22,15 @@ Then copy modified files from plugins :
 On windows :
 
 ```
-copy modified_draftjs_mention_files\addMention.js node_modules\draft-js-mention-plugin\lib\modifiers\addMention.js
-copy modified_draftjs_mention_files\mentionSuggestionsStrategy.js node_modules\draft-js-mention-plugin\lib\mentionSuggestionsStrategy.js
+robocopy modified_draftjs_mention_files/addMention.js node_modules/draft-js-mention-plugin/lib/modifiers/addMention.js
+robocopy modified_draftjs_mention_files/mentionSuggestionsStrategy.js draft-js-mention-plugin/lib/mentionSuggestionsStrategy.js
 ```
 
 On Linux / OS X :
 
 ```
 cp modified_draftjs_mention_files/addMention.js node_modules/draft-js-mention-plugin/lib/modifiers/addMention.js
-cp modified_draftjs_mention_files/mentionSuggestionsStrategy.js node_modules/draft-js-mention-plugin/lib/mentionSuggestionsStrategy.js
+cp modified_draftjs_mention_files/mentionSuggestionsStrategy.js draft-js-mention-plugin/lib/mentionSuggestionsStrategy.js
 ```
 
 Then build the app :
@@ -50,7 +50,7 @@ yarn copy
 On Linux / OS X :
 
 ```
-cp -R build ../react_native_app/editor_build/
+cp -R build ../react_native_app/editor_build
 ```
 
 
