@@ -1,0 +1,32 @@
+html, body {
+  background-color: #fefefe;
+}
+
+#root {
+  background-color: #fefefe;
+}
+.editor {
+  min-height: 250px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 2px;
+  box-shadow: inset 0px 1px 8px -3px #ABABAB;
+  background: #fefefe;
+}
+
+.DraftEditor-root {
+  box-sizing: inherit;
+  position: relative;
+  background-color: #fefefe;
+}
+
+
+.public-DraftEditorPlaceholder-root {
+    color: black;
+    opacity: 0.6;
+}
+.public-DraftEditorPlaceholder-hasFocus {
+    color: black;
+    opacity: 0.2;
+}
