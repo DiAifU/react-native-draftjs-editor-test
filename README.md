@@ -33,13 +33,21 @@ cp modified_draftjs_mention_files/addMention.js node_modules/draft-js-mention-pl
 cp modified_draftjs_mention_files/mentionSuggestionsStrategy.js draft-js-mention-plugin/lib/mentionSuggestionsStrategy.js
 ```
 
-Then build the app :
+Finally build the app :
 
 ```
 yarn build
 ```
 
-Finally copy the build to the React Native app :
+
+This will build a working Editor which can be tested on desktop by running a server using the command :
+
+```
+yarn start
+```
+
+
+Then copy the build to the React Native app :
 
 On Windows : 
 
@@ -54,19 +62,12 @@ cp -R build ../react_native_app/editor_build
 ```
 
 
-This will build a working Editor which can be tested on desktop by running a server using the command :
-
-```
-yarn start
-```
-
-
-Then build the React Native app :
+And build the React Native app :
 
 ```
 cd react_native_app
 yarn install
-react-native run-android # on run-ios (but untested)
+react-native run-android # or run-ios (but untested)
 ```
 
 Make sure a simulator is running or a device is connected for this last step.
